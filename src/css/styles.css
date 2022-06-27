@@ -15,6 +15,12 @@ body {
   margin: 0;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 .search-form {
   display: flex;
   justify-content: center;
@@ -24,7 +30,7 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.search-form input[type='search'] {
+.search-form input[type='text'] {
   border: 1px solid #ffffff;
   height: 40px;
   width: 350px;
@@ -33,17 +39,82 @@ body {
   border-bottom-left-radius: 10px;
 }
 
-.search-form input[type='submit'] {
-  border: 1px solid #ffffff;
+.search-form button {
+  border: 1px solid #d4d4d4;
+  background: #d4d4d4;
   height: 40px;
-  width: 50px;
-  background: url(http://s1.iconbird.com/ico/0612/vistabasesoftwareicons/w32h321339252759Magnifier25.png)
-    white no-repeat 50% 50%;
+  width: 60px;
   border-bottom-right-radius: 10px;
   border-top-right-radius: 10px;
+}
+
+.search-form button:active {
+  background: #d4d4d490;
 }
 
 .search-form input:focus {
   outline: none;
   border: 1px solid blue;
+}
+
+.load-more {
+  text-decoration: none;
+  display: flex;
+  color: white;
+  padding: 20px 30px;
+  margin: 20px auto;
+  border-radius: 10px;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-image: linear-gradient(
+    to right,
+    #9eefe1 0%,
+    #4830f0 51%,
+    #9eefe1 100%
+  );
+  background-size: 200% auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  transition: 0.5s;
+}
+
+.load-more:hover {
+  background-position: right center;
+}
+
+.load-more.hidden {
+  display: none;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.photo-card {
+  width: 594px;
+  margin: 20px;
+  border-radius: 0 0 2px 2px;
+  box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.3);
+
+  transform: scale(1);
+  transition: transform 300ms linear;
+}
+.photo-card:hover,
+.photo-card:focus {
+  transform: scale(1.03);
+
+  transition: transform 300ms linear;
+}
+
+.info {
+  display: flex;
+  justify-content: space-around;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
