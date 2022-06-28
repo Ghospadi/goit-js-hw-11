@@ -14,8 +14,10 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 const infiniteObserver = new IntersectionObserver(([entry], observer) => {
   if (entry.isIntersecting) {
     observer.unobserve(entry.target);
-    increasePage();
-    fetchPictures().then(appendPictures);
+    setTimeout(() => {
+      increasePage();
+      fetchPictures().then(appendPictures);
+    }, 500);
   }
 });
 const inputForm = document.querySelector('.search-form');
@@ -49,7 +51,7 @@ function onFormSubmit(e) {
 //   fetchPictures().then(appendPictures);
 // }
 
-// 
+//
 
 function appendPictures(data) {
   if (data.totalHits === 0) {
